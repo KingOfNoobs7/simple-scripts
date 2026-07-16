@@ -1,0 +1,18 @@
+# Custom Commands
+printf 'export PATH=$PATH:~/commands' >> .bashrc
+mkdir ~/commands
+
+# 'new' command
+echo "" > ~/commands/new
+chmod +x ~/commands/new
+echo 'echo "" > ~/commands/"$1"' >> ~/commands/new
+echo 'chmod +x ~/commands/"$1"' >> ~/commands/new
+echo 'nano ~/commands/"$1"' >> ~/commands/new
+
+# 'edit' command
+echo 'nano ~/commands/"$1"' > ~/commands/edit
+chmod +x ~/commands/edit
+
+# 'remove' command
+echo 'rm ~/commands/"$1"' > ~/commands/remove
+chmod +x ~/commands/remove
